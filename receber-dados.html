@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receber Dados</title>
+</head>
+<body>
+
+    <h1>Dados Recebidos</h1>
+  
+     <li>
+        <a href="dados.html">Dados</a>
+    </li>
+  
+    <script>
+    
+        function obterParametros() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+           
+            const sensor1 = urlParams.get('sensor1');
+            const sensor2 = urlParams.get('sensor2');
+
+           
+            document.body.innerHTML += `<p>Valor do Sensor 1: ${sensor1}</p>`;
+            document.body.innerHTML += `<p>Valor do Sensor 2: ${sensor2}</p>`;
+        }
+
+  
+        obterParametros();
+    </script>
+
+</body>
+</html>
